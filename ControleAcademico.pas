@@ -2,17 +2,36 @@
 
 program ControleAcademico;
 
-uses crt, Disciplina, Curso, Aluno, Matricula,ControleAluno, ControleMatricula;
+uses crt, Disciplina, Cursos, Curso, Aluno, Matricula,ControleAluno, ControleMatricula;
 //var i : byte;
 //var pessoa : TPessoa;
 
 var ODisciplina : TDisciplina;
-var OCurso : TCurso;
-
+var OCursos : TCursos;
+var opcaoPrincipal,OpcaoSecundaria:Integer;
 BEGIN
-	ODisciplina := TDisciplina.CreateCustom(701, 'CLP', 72.0, 10.0);
-	writeln('Nome: ', ODisciplina.getFNome);
+	repeat
+		writeln('Escolha uma opção para gerenciar:');
+		writeln('1 - Cursos');
+		writeln('2 - Disciplinas');
+		writeln('3 - Alunos');
+		writeln('4 - Matriculas');
+		writeln('0 - Sair');
+		readln(opcaoPrincipal);
 
-	OCurso := TCurso.CreateCustom(101, 'Ciência da Computacão' , 8);
-	writeln('Nome: ', OCurso.getFNome);
+		case opcaoPrincipal of
+			1: 
+			BEGIN
+				OCursos.gerenciar;
+			END;
+		
+			2: 
+			BEGIN
+				
+			END;
+		end;
+
+	until opcaoPrincipal = 0;
+	
+
 END.

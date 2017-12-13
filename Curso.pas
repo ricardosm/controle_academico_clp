@@ -26,10 +26,12 @@ type
 		function getFDuracao : integer;
 		procedure setFDuracao(duracao : integer);
 		function setDisciplina(semestre: integer; disciplina: TDisciplina) : boolean;
+		
 
 end;
 
 implementation
+	
 	constructor TCurso.CreateCustom(codigo: integer; nome: string; duracao: integer);
 	var i : integer;
 	begin
@@ -76,8 +78,6 @@ implementation
 	function TCurso.setDisciplina(semestre: integer; disciplina: TDisciplina) : boolean;
 	var linha : integer;
 	begin
-
-
 		Result := true;
 	end;
 

@@ -30,7 +30,7 @@ type
 		function getDisciplinaMatriculada(i : integer) : TDisciplina;
 		function getNumeroDisciplinasMatriculadas : integer;
     procedure deletDisciplina(i : string);
-    procedure incertDisciplina(nome : string; codig : integer;periodo : real;valor : real);
+    procedure insertDisciplina(nome : string; codig : integer;periodo : real;valor : real);
 
 end;
 
@@ -107,7 +107,7 @@ implementation
     end;
   end;
 
-  procedure TMatricula.incertDisciplina(nome : string; codig : integer;periodo : real;valor : real);
+  procedure TMatricula.insertDisciplina(nome : string; codig : integer;periodo : real;valor : real);
   begin
     FTamanho:= 0;
     while FTamanho < getNumeroDisciplinasMatriculadas() do
