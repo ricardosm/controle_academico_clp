@@ -2,7 +2,7 @@
 
 program ControleAcademico;
 
-uses crt, Disciplina, Curso, Aluno, Matricula,ControleAluno;
+uses crt, Disciplina, Curso, Aluno, Matricula,ControleAluno, ControleMatricula;
 //var i : byte;
 //var pessoa : TPessoa;
 

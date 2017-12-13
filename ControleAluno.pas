@@ -10,26 +10,26 @@ uses
 type
 	TControleAluno = class(TObject)
   private
-    FMatriculas : array of TMatricula;
+    FAlunos : array of TAluno;
   public
     constructor CreateCustom(tam : integer);
-    function getFMatriculas(local : integer) : TMatricula;
-    procedure setFMatriculas(matricula : TMatricula; i : integer);
+    function getFAlunos(local : integer) : TAluno;
+    procedure setFAlunos(alunos : TAluno; i : integer);
 
 end;
 implementation
   constructor TControleAluno.CreateCustom(tam : integer);
   begin
-    SetLength(FMatriculas, tam);
+    SetLength(FAlunos, tam);
   end;
-  function TControleAluno.getFMatriculas(local : integer) : TMatricula;
+  function TControleAluno.getFAlunos(local : integer) : TAluno;
 	begin
-		Result := FMatriculas[local];
+		Result := FAlunos[local];
 	end;
 
-	procedure TControleAluno.setFMatriculas(matricula : TMatricula; i : integer);
+	procedure TControleAluno.setFAlunos(alunos : TAluno; i : integer);
 	begin
-		FMatriculas[i] := matricula;
+		FAlunos[i] := alunos;
 	end;
 
 BEGIN
