@@ -7,16 +7,16 @@ interface
 uses
   crt, Classes, SysUtils;
 
-type 
+type
 	TDisciplina = class(TObject)
-	private 
+	private
 		FCodigo: integer;
 		FNome: string;
-		FCargaHoraria: real; 
+		FCargaHoraria: real;
 		FValor: real;
 	public
 		constructor CreateCustom(codigo: integer; nome: string; cargaHoraria: real; valor: real);
-		
+
 		function getFCodigo : integer;
 		procedure setFCodigo(codigo : integer);
 		function getFNome : string;
@@ -25,8 +25,8 @@ type
 		procedure setFCargaHoraria(cargaHoraria : real);
 		function getFValor : real;
 		procedure setFValor(valor : real);
-		
-end;		
+
+end;
 
 implementation
 	constructor TDisciplina.CreateCustom(codigo: integer; nome: string; cargaHoraria: real; valor: real);
@@ -36,12 +36,12 @@ implementation
 		FCargaHoraria := cargaHoraria;
 		FValor := valor;
 	end;
-	
+
 	function TDisciplina.getFCodigo() : integer;
 	begin
 		Result := FCodigo;
 	end;
-	
+
 	procedure TDisciplina.setFCodigo(codigo : integer);
 	begin
 		FCodigo := codigo;
@@ -51,33 +51,32 @@ implementation
 	begin
 		Result := FNome;
 	end;
-	
+
 	procedure TDisciplina.setFNome(nome : string);
 	begin
 		FNome := nome;
 	end;
-	
+
 	function TDisciplina.getFCargaHoraria() : real;
 	begin
 		Result := FCargaHoraria;
 	end;
-	
+
 	procedure TDisciplina.setFCargaHoraria(cargaHoraria : real);
 	begin
 		FCargaHoraria := cargaHoraria;
 	end;
-	
+
 	function TDisciplina.getFValor() : real;
 	begin
 		Result := FValor;
 	end;
-	
+
 	procedure TDisciplina.setFValor(valor : real);
 	begin
 		FValor := valor;
 	end;
-	
-BEGIN	
-	
-END.
 
+BEGIN
+
+END.

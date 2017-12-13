@@ -7,18 +7,18 @@ interface
 uses
   crt, Classes, SysUtils, Disciplina;
 
-type 
+type
 	ArrayOfDisciplina = array of TDisciplina;
-	
+
 	TCurso = class(TObject)
-	private 
+	private
 		FCodigo: integer;
 		FNome: string;
 		FDuracao: integer;
-		FDisciplinas : array of ArrayOfDisciplina; 
+		FDisciplinas : array of ArrayOfDisciplina;
 	public
 		constructor CreateCustom(codigo: integer; nome: string; duracao: integer);
-		
+
 		function getFCodigo : integer;
 		procedure setFcodigo(codigo : integer);
 		function getFNome : string;
@@ -26,8 +26,8 @@ type
 		function getFDuracao : integer;
 		procedure setFDuracao(duracao : integer);
 		function setDisciplina(semestre: integer; disciplina: TDisciplina) : boolean;
-				
-end;		
+
+end;
 
 implementation
 	constructor TCurso.CreateCustom(codigo: integer; nome: string; duracao: integer);
@@ -37,17 +37,17 @@ implementation
 		FNome := nome;
 		FDuracao := duracao;
 		SetLength(FDisciplinas, duracao);
-		
+
 		for i := Low(FDisciplinas) to High(FDisciplinas) do
 			SetLength(FDisciplinas[i], duracao);
-		
+
 	end;
-	
+
 	function TCurso.getFCodigo() : integer;
 	begin
 		Result := FCodigo;
 	end;
-	
+
 	procedure TCurso.setFCodigo(codigo : integer);
 	begin
 		FCodigo := codigo;
@@ -57,31 +57,30 @@ implementation
 	begin
 		Result := FNome;
 	end;
-	
+
 	procedure TCurso.setFNome(nome : string);
 	begin
 		FNome := nome;
 	end;
-	
+
 	function TCurso.getFDuracao() : integer;
 	begin
 		Result := FDuracao;
 	end;
-	
+
 	procedure TCurso.setFDuracao(duracao : integer);
 	begin
 		FDuracao := duracao;
 	end;
-	
+
 	function TCurso.setDisciplina(semestre: integer; disciplina: TDisciplina) : boolean;
 	var linha : integer;
 	begin
-		
-		
+
+
 		Result := true;
 	end;
-	
-BEGIN	
-	
-END.
 
+BEGIN
+
+END.
