@@ -7,13 +7,13 @@ Classes, SysUtils;
 
 type
 	TDisciplinaModel = class
-	
+
 	public
-    	FCodigo: integer;
+    FCodigo: integer;
 		FNome: string;
 		FCargaHoraria: real;
 		FValor: real;
-    	function getFCodigo : integer;
+    function getFCodigo : integer;
 		procedure setFCodigo(codigo : integer);
 		function getFNome : string;
 		procedure setFNome(nome : string);

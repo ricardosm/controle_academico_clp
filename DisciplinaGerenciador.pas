@@ -1,6 +1,6 @@
 unit DisciplinaGerenciador;
  {$MODE OBJFPC}
-interface
+ interface
   uses Classes,fgl ,SysUtils,DisciplinaModel;
   type
   TMyList = specialize TFPGObjectList<TDisciplinaModel>;
@@ -93,7 +93,7 @@ procedure TDisciplinaGerenciador.gerenciar;
   var opcao:integer;
   begin
     repeat
-      Writeln('Escolha uma opção');
+      Writeln('Escolha uma opï¿½ï¿½o');
       Writeln('1 - Cadastrar Disciplina');
       Writeln('2 - Listar Disciplinas');
       Writeln('3 - Editar Disciplinas');
@@ -132,20 +132,19 @@ procedure TDisciplinaGerenciador.gerenciar;
     end;
   end;
 
-  procedure TDisciplinaGerenciador.listar;  
+  procedure TDisciplinaGerenciador.listar;
   var temp : TDisciplinaModel;
   begin
     Writeln('Lista de Disciplinas Cadastradas:');
     for temp in FLista do
     begin
       Writeln('----------------------');
-      Writeln('Código: ',temp.getFCodigo);
+      Writeln('Cï¿½digo: ',temp.getFCodigo);
       Writeln('Nome: ',temp.getFNome);
       Writeln('----------------------');
     end;
-      
+
   end;
 
 
 end.
-
