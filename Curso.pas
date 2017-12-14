@@ -17,7 +17,7 @@ type
 		FDuracao: integer;
 		FDisciplinas : array of ArrayOfDisciplina;
 	public
-		constructor CreateCustom(codigo: integer; nome: string; duracao: integer);
+		constructor CreateCustom(codigo: integer; nome: string; duracao: integer;disciplina : integer);
 
 		function getFCodigo : integer;
 		procedure setFcodigo(codigo : integer);
@@ -26,19 +26,18 @@ type
 		function getFDuracao : integer;
 		procedure setFDuracao(duracao : integer);
 		function setDisciplina(semestre: integer; disciplina: TDisciplina) : boolean;
-		
+
 
 end;
 
 implementation
-	
-	constructor TCurso.CreateCustom(codigo: integer; nome: string; duracao: integer);
+
+	constructor TCurso.CreateCustom(codigo: integer; nome: string; duracao: integer; disciplina : integer);
 	var i : integer;
 	begin
 		FCodigo := codigo;
 		FNome := nome;
 		FDuracao := duracao;
-		SetLength(FDisciplinas, duracao);
 
 		for i := Low(FDisciplinas) to High(FDisciplinas) do
 			SetLength(FDisciplinas[i], duracao);
@@ -46,6 +45,7 @@ implementation
 	end;
 
 	function TCurso.getFCodigo() : integer;
+  var Resulti : integer;
 	begin
 		Result := FCodigo;
 	end;

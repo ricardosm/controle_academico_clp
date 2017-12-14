@@ -7,26 +7,27 @@ interface
 uses
   crt, contnrs,Classes, SysUtils, Curso, Disciplinas;
 
-type 
+type
 	TCursos = class
-	private		
+	private
 		FCursosLists: array of TCurso;
 		qtdecursos:integer;
-		
+
 	public
-		constructor Create();
+		constructor CreateCustom;
 		procedure gerenciar;
 		procedure listar;
 		procedure adicionar;
-		
-		
+
+
 
 end;
 
 implementation
 
-constructor TCursos.Create();
+constructor TCursos.CreateCustom;
 begin
+  
 	setLength(FCursosLists,20);
 	qtdecursos:=0;
 end;
@@ -44,38 +45,38 @@ procedure TCursos.gerenciar;
 			case opcao of
 			1: listar;
 			2: adicionar;
-					
+
 			end;
 		until opcao = 0;
 	end;
 
 
 
-procedure TCursos.adicionar;	
+procedure TCursos.adicionar;
 	var c : TCurso;
 	var tempInt: integer;
+      tempdici : integer;
+      tempcur : integer;
 	var tempstring: string;
 	begin
-		c := TCurso.Create;
 		writeln('Digite o codigo do curso:');
 		readln(tempInt);
-		c.setFCodigo(tempInt);
 		writeln('Digite o nome do curso:');
 		readln(tempstring);
-		c.setFNome(tempstring);
-		writeln('Digite a duração do curso:');
-		readln(tempint);
-		writeln('Digite a duração do curso:');
-		c.setFDuracao(tempint);
+    writeln('Digite a duração do curso:');
+		readln(tempcur);
+    writeln('Digite a quantidade de disciplinas:');
+		readln(tempdici);
+		c := TCurso.CreateCustom(tempInt,tempstring,tempcur,tempdici);
 		//inserir as disciplinas
-		FCursosLists[qtdecursos] := c;
+    FCursosLists[qtdecursos] := c;
 		qtdecursos := qtdecursos+1;
 	end;
 
-procedure TCursos.listar;	
+procedure TCursos.listar;
 	var i:integer;
 	begin
-		for i:=1 to 6 do 
+		for i:=1 to 6 do
 		begin
 
 		end;

@@ -20,18 +20,19 @@ BEGIN
 		readln(opcaoPrincipal);
 
 		case opcaoPrincipal of
-			1: 
+			1:
 			BEGIN
+				OCursos.Create();
 				OCursos.gerenciar;
 			END;
-		
-			2: 
+
+			2:
 			BEGIN
-				
+
 			END;
 		end;
 
 	until opcaoPrincipal = 0;
-	
+
 
 END.
