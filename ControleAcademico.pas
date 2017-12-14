@@ -1,38 +1,31 @@
-{$MODE DELPHI}
-
 program ControleAcademico;
 
-uses crt, Disciplina, Cursos, Curso, Aluno, Matricula,ControleAluno, ControleMatricula;
-//var i : byte;
-//var pessoa : TPessoa;
+{$APPTYPE CONSOLE}
 
-var ODisciplina : TDisciplina;
-var OCursos : TCursos;
-var opcaoPrincipal,OpcaoSecundaria:Integer;
-BEGIN
-	repeat
-		writeln('Escolha uma opção para gerenciar:');
-		writeln('1 - Cursos');
-		writeln('2 - Disciplinas');
-		writeln('3 - Alunos');
-		writeln('4 - Matriculas');
-		writeln('0 - Sair');
-		readln(opcaoPrincipal);
+{$R *.res}
 
-		case opcaoPrincipal of
-			1:
-			BEGIN
-				OCursos.Create();
-				OCursos.gerenciar;
-			END;
+uses
+  System.SysUtils,
+  DisciplinaModel in 'DisciplinaModel.pas',
+  DisciplinaGerenciador in 'DisciplinaGerenciador.pas';
 
-			2:
-			BEGIN
+var opcao:integer;
+var DisciplinaGerenciador:TDisciplinaGerenciador;
+begin
+  try
+    DisciplinaGerenciador := TDisciplinaGerenciador.Create;
+    repeat
+      Writeln('Escolha uma opção');
+      Writeln('1 - Gerenciar Disciplinas');
+      Writeln('0 - Sair');
+      Readln(opcao);
+      case opcao of
+                1:   DisciplinaGerenciador.gerenciar;
+      end;
+    until opcao = 0;
 
-			END;
-		end;
-
-	until opcaoPrincipal = 0;
-
-
-END.
+  except
+    on E: Exception do
+      Writeln(E.ClassName, ': ', E.Message);
+  end;
+end.

@@ -1,0 +1,48 @@
+﻿unit Cursos;
+interface
+  uses
+    System.SysUtils, Classes,
+    Curso;
+  Type
+  TCursos = class
+    private
+      FLista : TList;
+    public
+      constructor Create;
+      procedure Adicionar(pcurso : TCurso);
+      procedure Remover(Index:integer);
+      function Count:integer;
+      procedure gerenciar;
+  end;
+{ TCursos }
+implementation
+  procedure TCursos.Adicionar(pcurso: TCurso);
+  begin
+
+  end;
+
+  function TCursos.Count: integer;
+  begin
+
+  end;
+
+  constructor TCursos.Create;
+  begin
+    FLista := TList.Create;
+  end;
+
+  procedure TCursos.gerenciar;
+  var opcao;
+  begin
+    repeat
+      
+    until (opcao = 0);
+
+  end;
+
+procedure TCursos.Remover(Index: integer);
+  begin
+
+  end;
+
+end.
