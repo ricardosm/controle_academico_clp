@@ -1,11 +1,12 @@
 unit DisciplinaGerenciador;
-
+ {$MODE OBJFPC}
 interface
-  uses Classes,System.Generics.Collections,System.SysUtils,DisciplinaModel;
+  uses Classes,fgl ,SysUtils,DisciplinaModel;
   type
+  TMyList = specialize TFPGObjectList<TDisciplinaModel>;
   TDisciplinaGerenciador = class
   private
-    FLista : TList<TDisciplinaModel>;
+    FLista : TMyList;
   public
     constructor Create;
     destructor Destroy; override;
@@ -17,7 +18,7 @@ implementation
   constructor TDisciplinaGerenciador.Create;
   begin
     inherited Create;
-    FLista := TList<TDisciplinaModel>.Create;
+    FLista := TMyList.Create;
   end;
   destructor TDisciplinaGerenciador.Destroy;
   begin
@@ -63,8 +64,7 @@ implementation
     end;
   end;
 
-  procedure TDisciplinaGerenciador.listar;
-  var i : integer;
+  procedure TDisciplinaGerenciador.listar;  
   var temp : TDisciplinaModel;
   begin
     Writeln('Lista de Disciplinas Cadastradas:');

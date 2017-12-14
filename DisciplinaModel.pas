@@ -1,16 +1,19 @@
 unit DisciplinaModel;
-
+ {$MODE OBJFPC}
 interface
-  type
-  TDisciplinaModel = class
 
-  private
-  public
-    FCodigo: integer;
+uses
+Classes, SysUtils;
+
+type
+	TDisciplinaModel = class
+	
+	public
+    	FCodigo: integer;
 		FNome: string;
 		FCargaHoraria: real;
 		FValor: real;
-    function getFCodigo : integer;
+    	function getFCodigo : integer;
 		procedure setFCodigo(codigo : integer);
 		function getFNome : string;
 		procedure setFNome(nome : string);

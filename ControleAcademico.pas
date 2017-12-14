@@ -1,26 +1,23 @@
 program ControleAcademico;
-
-{$APPTYPE CONSOLE}
-
-{$R *.res}
+ {$MODE OBJFPC}
 
 uses
-  System.SysUtils,
+  SysUtils,
   DisciplinaModel in 'DisciplinaModel.pas',
   DisciplinaGerenciador in 'DisciplinaGerenciador.pas';
 
 var opcao:integer;
-var DisciplinaGerenciador:TDisciplinaGerenciador;
+var dg:TDisciplinaGerenciador;
 begin
   try
-    DisciplinaGerenciador := TDisciplinaGerenciador.Create;
+    dg := TDisciplinaGerenciador.Create;
     repeat
       Writeln('Escolha uma opção');
       Writeln('1 - Gerenciar Disciplinas');
       Writeln('0 - Sair');
       Readln(opcao);
       case opcao of
-                1:   DisciplinaGerenciador.gerenciar;
+                1:   dg.gerenciar;
       end;
     until opcao = 0;
 
